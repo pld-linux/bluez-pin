@@ -12,7 +12,7 @@ BuildRequires:	GConf2-devel >= 2.0.0
 BuildRequires:	bluez-libs-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
