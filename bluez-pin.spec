@@ -37,7 +37,7 @@ informacji o parowaniu miêdzy sesjami.
 %prep
 %setup -q
 
-sed -i -e 's/-O2 -g/%{rpmcflags}' Makefile
+sed -i -e 's/-O2 -g/%{rpmcflags}/' Makefile
 
 %build
 %{__make}
