@@ -40,13 +40,17 @@ informacji o parowaniu miêdzy sesjami.
 sed -i -e 's/-O2 -g/%{rpmcflags}/' Makefile
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	PREFIX=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	PREFIX=%{_prefix} \
+	SYSCONFDIR=%{_sysconfdir}
 
 %find_lang %{name}
 
