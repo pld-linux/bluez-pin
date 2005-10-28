@@ -1,0 +1,77 @@
+--- bluez-pin-0.26/po/pl.po.orig	2003-10-13 23:23:03.000000000 +0200
++++ bluez-pin-0.26/po/pl.po	2005-10-29 00:05:40.527386792 +0200
+@@ -2,39 +2,51 @@
+ # Copyright (C) 2003 The Free Software Foundation
+ # This file is distributed under the same license as the bluez-pin package.
+ # Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>, 2003.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2005.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: bluez-pin 0.08\n"
+-"POT-Creation-Date: 2003-02-21 00:12+0000\n"
+-"PO-Revision-Date: 2003-10-13 22:32+0100\n"
+-"Last-Translator: Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>\n"
++"Project-Id-Version: bluez-pin 0.26\n"
++"POT-Creation-Date: 2005-09-05 20:26+0100\n"
++"PO-Revision-Date: 2005-10-29 00:01+0200\n"
++"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+-#: bluez-pin.c:127
+-msgid "Outgoing connection to"
+-msgstr "Wychodz±ce po³±czenie z"
+-
+-#: bluez-pin.c:128
+-msgid "Incoming connection from"
+-msgstr "Przychodz±ce po³±czenie z"
+-
+-#: bluez-pin.c:134
+-msgid "PIN:"
+-msgstr "PIN:"
+-
+-#: bluez-pin.c:137
+-msgid "Save in database"
+-msgstr "Zapisz w bazie danych"
++#: main.c:131
++#, c-format
++msgid "Usage: %s <in|out> <address> [name]\n"
++msgstr "Sk³adnia: %s <in|out> <adres> [nazwa]\n"
++
++#: main.c:132
++#, c-format
++msgid " or    %s --dbus\n"
++msgstr " lub      %s --dbus\n"
+ 
+-#: bluez-pin.c:179
++#: pin-ui.c:155 bluez-pin.glade:10 bluez-pin-gpe.glade:9
+ msgid "Bluetooth PIN"
+ msgstr "PIN bluetooth"
+ 
+-#: bluez-pin.c:191
++#: pin-ui.c:166
+ #, c-format
+-msgid "Usage: %s <in|out> <address>\n"
+-msgstr "U¿ycie: %s <in|out> <adres>\n"
++msgid "Outgoing connection to %s"
++msgstr "Wychodz±ce po³±czenie do %s"
++
++#: pin-ui.c:167
++#, c-format
++msgid "Incoming connection from %s"
++msgstr "Przychodz±ce po³±czenie z %s"
++
++#: bluez-pin.glade:92 bluez-pin-gpe.glade:90
++msgid "Connection type"
++msgstr "Rodzaj po³±czenia"
++
++#: bluez-pin.glade:119 bluez-pin-gpe.glade:117
++msgid "_PIN:"
++msgstr "_PIN:"
++
++#: bluez-pin.glade:147 bluez-pin-gpe.glade:145
++msgid "*"
++msgstr "*"
