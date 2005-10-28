@@ -1,16 +1,18 @@
 Summary:	Bluetooth PIN manager
 Summary(pl):	Zarz±dca kodów PIN dla Bluetooth
 Name:		bluez-pin
-Version:	0.25
+Version:	0.26
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.gz
-# Source0-md5:	6f3c368ddef1d6cb8dced822bc5242b2
+# Source0-md5:	8d3b88c85908307935bcc10fcd9c2547
+Patch0:		%{name}-pl.po-update.patch
+Patch1:		%{name}-dbus.patch
 URL:		http://gpe.handhelds.org/projects/bluez-pin.shtml
 BuildRequires:	GConf2-devel >= 2.0.0
 BuildRequires:	bluez-libs-devel
-BuildRequires:	dbus-glib-devel < 0.30
+BuildRequires:	dbus-glib-devel >= 0.50
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libglade2-devel >= 2.0.0
@@ -36,6 +38,8 @@ informacji o parowaniu miêdzy sesjami.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 sed -i -e 's/-O2 -g/%{rpmcflags}/' Makefile
 
@@ -61,6 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_bindir}/bluez-pin
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dbus-1/system.d/bluez.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dbus-1/system.d/bluez.conf
 %{_pixmapsdir}/bt-logo.png
 %{_datadir}/%{name}
