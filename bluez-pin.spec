@@ -1,14 +1,14 @@
 Summary:	Bluetooth PIN manager
 Summary(pl):	Zarz±dca kodów PIN dla Bluetooth
 Name:		bluez-pin
-Version:	0.26
+Version:	0.30
 Release:	1
 License:	GPL
 Group:		Applications
-Source0:	ftp://gpe.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.gz
-# Source0-md5:	8d3b88c85908307935bcc10fcd9c2547
-Patch0:		%{name}-pl.po-update.patch
-Patch1:		%{name}-dbus.patch
+Source0:	ftp://ftp.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
+# Source0-md5:	518226e84ea0925511184fe85f89e901
+#Patch0:		%{name}-pl.po-update.patch
+#Patch1:		%{name}-dbus.patch
 URL:		http://gpe.handhelds.org/projects/bluez-pin.shtml
 BuildRequires:	GConf2-devel >= 2.0.0
 BuildRequires:	bluez-libs-devel
@@ -38,12 +38,12 @@ informacji o parowaniu miêdzy sesjami.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-
-sed -i -e 's/-O2 -g/%{rpmcflags}/' Makefile
+#%patch0 -p1
+#%patch1 -p1
 
 %build
+%configure \
+	--with-included-gettext
 %{__make} \
 	CC="%{__cc}" \
 	PREFIX=%{_prefix}
@@ -56,12 +56,11 @@ rm -rf $RPM_BUILD_ROOT
 	PREFIX=%{_prefix} \
 	SYSCONFDIR=%{_sysconfdir}
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files 
+#-f %{name}.lang
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_bindir}/bluez-pin
