@@ -7,7 +7,6 @@ License:	GPL
 Group:		Applications
 Source0:	ftp://ftp.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	518226e84ea0925511184fe85f89e901
-#Patch0:		%{name}-pl.po-update.patch
 URL:		http://gpe.handhelds.org/projects/bluez-pin.shtml
 BuildRequires:	GConf2-devel >= 2.0.0
 BuildRequires:	bluez-libs-devel
@@ -37,7 +36,6 @@ informacji o parowaniu miêdzy sesjami.
 
 %prep
 %setup -q
-#%patch0 -p1
 
 %build
 %configure
