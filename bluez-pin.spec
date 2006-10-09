@@ -8,7 +8,6 @@ Group:		Applications
 Source0:	ftp://ftp.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
 # Source0-md5:	518226e84ea0925511184fe85f89e901
 #Patch0:		%{name}-pl.po-update.patch
-#Patch1:		%{name}-dbus.patch
 URL:		http://gpe.handhelds.org/projects/bluez-pin.shtml
 BuildRequires:	GConf2-devel >= 2.0.0
 BuildRequires:	bluez-libs-devel
@@ -39,22 +38,17 @@ informacji o parowaniu miêdzy sesjami.
 %prep
 %setup -q
 #%patch0 -p1
-#%patch1 -p1
 
 %build
-%configure \
-	--with-included-gettext
-%{__make} \
-	CC="%{__cc}" \
-	PREFIX=%{_prefix}
+%configure
+
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	PREFIX=%{_prefix} \
-	SYSCONFDIR=%{_sysconfdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
