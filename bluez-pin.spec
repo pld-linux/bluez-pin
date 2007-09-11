@@ -2,7 +2,7 @@ Summary:	Bluetooth PIN manager
 Summary(pl.UTF-8):	Zarządca kodów PIN dla Bluetooth
 Name:		bluez-pin
 Version:	0.30
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications
 Source0:	ftp://ftp.handhelds.org/projects/gpe/source/%{name}-%{version}.tar.bz2
