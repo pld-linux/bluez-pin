@@ -11,7 +11,7 @@ URL:		http://gpe.handhelds.org/projects/bluez-pin.shtml
 BuildRequires:	GConf2-devel >= 2.0.0
 BuildRequires:	bluez-libs-devel
 BuildRequires:	dbus-glib-devel >= 0.50
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	pkgconfig
